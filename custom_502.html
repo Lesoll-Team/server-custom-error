@@ -38,6 +38,9 @@
         color: #309da0;
         font-weight: bold;
       }
+      h2 {
+        color: #666666;
+      }
       .lang {
         position: absolute;
         top: 10px;
@@ -77,19 +80,20 @@
       const heading = document.querySelector("h1");
       const subHeading = document.querySelector("h2");
       const langBtn = document.querySelector(".lang");
-      heading.innerText = "website is under maintenance";
-      subHeading.innerText = "Please try again later";
+
       const toggleLang = () => {
         if (lang) {
           langBtn.innerText = "عربى";
           lang = false;
           heading.innerText = "website is under maintenance";
           subHeading.innerText = "Please try again later";
+          textContainer.dir = "ltr";
         } else {
           langBtn.innerText = "ُEnglish";
           lang = true;
           heading.innerText = "جارى عمل بعض الإصلاحات";
           subHeading.innerText = "برجاء المحاولة بعد قليل";
+          textContainer.dir = "rtl";
         }
       };
       langBtn.addEventListener("click", toggleLang);
