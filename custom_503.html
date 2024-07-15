@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Lesoll</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+      body {
+        font-family: "Noto Sans Arabic", sans-serif;
+
+        display: grid;
+        height: 100vh; /* Changed from 100dvh to 100vh */
+        width: 100%;
+        place-content: center;
+        margin: 0; /* Ensure no default margin */
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+      }
+      h1 {
+        color: #309da0;
+        font-weight: bold;
+      }
+      .lang {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: underline;
+        cursor: pointer;
+        text-align: center;
+        width: 70px;
+      }
+      @media screen and (max-width: 1050px) {
+        .container {
+          flex-direction: column;
+        }
+        .text-container {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lang">English</div>
+    <div class="container">
+      <div>
+        <img
+          src="https://cdn.discordapp.com/attachments/1057322504160550933/1262338890635677737/Group.png?ex=66963c34&is=6694eab4&hm=406aecf5c98ea3f2d4abf8e0ae5991747590f0ea450ff6613245e75c217c8df8&"
+          alt=""
+        />
+      </div>
+      <div class="text-container" dir="rtl">
+        <h1>جارى عمل بعض الإصلاحات</h1>
+        <h2>برجاء المحاولة بعد قليل</h2>
+      </div>
+    </div>
+    <script>
+      let lang = true;
+      const textContainer = document.querySelector(".text-container");
+      const heading = document.querySelector("h1");
+      const subHeading = document.querySelector("h2");
+      const langBtn = document.querySelector(".lang");
+      heading.innerText = "website is under maintenance";
+      subHeading.innerText = "Please try again later";
+      const toggleLang = () => {
+        if (lang) {
+          langBtn.innerText = "عربى";
+          lang = false;
+          heading.innerText = "website is under maintenance";
+          subHeading.innerText = "Please try again later";
+        } else {
+          langBtn.innerText = "ُEnglish";
+          lang = true;
+          heading.innerText = "جارى عمل بعض الإصلاحات";
+          subHeading.innerText = "برجاء المحاولة بعد قليل";
+        }
+      };
+      langBtn.addEventListener("click", toggleLang);
+    </script>
+  </body>
+</html>
